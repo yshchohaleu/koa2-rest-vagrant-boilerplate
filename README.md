@@ -1,1 +1,5 @@
-# koa2-rest-vagrant-boilerplate
+## Install
+
+./mongoimport.sh
+npm install
+npm start

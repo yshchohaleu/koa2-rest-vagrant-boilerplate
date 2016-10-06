@@ -1,0 +1,46 @@
+[
+  {
+    "_id": ObjectId("56bc57c4a615547381588062"),
+    "index": 0,
+    "isActive": false,
+    "name": "Moore",
+    "surname": "Vinson",
+    "email": "moorevinson@conferia.com",
+    "phone": "+1 (902) 511-2314",
+    "address": "433 Sullivan Street, Twilight, Maine, 4931",
+    "password": "asd123!"
+  },
+  {
+    "_id": ObjectId("56bc57c47bb0e8884071eb00"),
+    "index": 1,
+    "isActive": false,
+    "name": "Noble",
+    "surname": "Downs",
+    "email": "nobledowns@conferia.com",
+    "phone": "+1 (812) 412-3775",
+    "address": "357 River Street, Chelsea, District Of Columbia, 5938",
+    "password": "asd123!"
+  },
+  {
+    "_id": ObjectId("56bc57c4ac1b8eb0752f9e90"),
+    "index": 2,
+    "isActive": true,
+    "name": "Kline",
+    "surname": "Christian",
+    "email": "klinechristian@conferia.com",
+    "phone": "+1 (800) 454-2829",
+    "address": "368 Love Lane, Jeff, Connecticut, 7603",
+    "password": "asd123!"
+  },
+  {
+    "_id": ObjectId("56bc57c48cc9e78b4ce61206"),
+    "index": 3,
+    "isActive": true,
+    "name": "Price",
+    "surname": "Shelton",
+    "email": "priceshelton@conferia.com",
+    "phone": "+1 (863) 516-2166",
+    "address": "587 Classon Avenue, Grapeview, New Jersey, 7382",
+    "password": "asd123!"
+  }
+]
