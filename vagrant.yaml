@@ -1,0 +1,7 @@
+configs:
+    ports:
+        http: 8080
+        http_node: 3000
+        debug_node: 27018
+    path:
+        project: '/var/www/koa2-boilerplate'
