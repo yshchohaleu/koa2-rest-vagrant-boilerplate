@@ -1,5 +1,5 @@
 ## Install
 
-./mongoimport.sh
-npm install
-npm start
+* ./mongoimport.sh
+* npm install
+* npm start
