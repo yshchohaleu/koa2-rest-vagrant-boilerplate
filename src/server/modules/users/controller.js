@@ -9,7 +9,7 @@ export async function create (ctx) {
     ctx.body = { status: 'success' };
 }
 
-export async function get1 (ctx) {
+export async function get (ctx) {
     try {
         let users = await usersService.find({});
         ctx.body = { users }

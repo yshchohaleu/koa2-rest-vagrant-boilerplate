@@ -3,14 +3,13 @@
 import mongoose from 'mongoose';
 import validate from 'mongoose-validator';
 import jwt from 'jsonwebtoken'
+import bcrypt from 'bcrypt-as-promised';
 
 import config from '../config'
 
 const SALT_WORK_FACTOR = 10;
-const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const userSchema = new mongoose.Schema({
-    _id: ObjectId,
     name: {
         type: String,
         trim: true,

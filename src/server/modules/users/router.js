@@ -16,7 +16,7 @@ export default [
         route: '/',
         handlers: [
             ensureUser,
-            user.get1
+            user.get
         ]
     },
     {
