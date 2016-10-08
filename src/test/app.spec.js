@@ -4,9 +4,8 @@ import mongoose from 'mongoose'
 
 const request = supertest.agent(app.listen());
 
-describe('Get user', function () {
+describe('GET api/users', function () {
     it('should get users', function (done) {
-        var id = mongoose.Types.ObjectId();
         request
             .get('/api/users')
             .expect(200, done)

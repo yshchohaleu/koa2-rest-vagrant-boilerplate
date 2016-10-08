@@ -25,7 +25,7 @@ const AuthLocalUser = async (email, password, done) => {
         return done(null, false)
     }
     try {
-        const isMatch = await user.validatePassword(password);
+        let isMatch = await user.validatePassword(password);
         if (!isMatch) {
             return done(null, false)
         }
@@ -37,9 +37,6 @@ const AuthLocalUser = async (email, password, done) => {
 
 passport.serializeUser(serialize);
 passport.deserializeUser(deserialize);
-passport.use('local', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-}, AuthLocalUser));
+passport.use('local', new LocalStrategy(AuthLocalUser));
 
 export default passport;

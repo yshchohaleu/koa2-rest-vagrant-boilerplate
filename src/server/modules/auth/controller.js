@@ -1,18 +1,19 @@
 import passport from 'koa-passport'
 
-export async function authUser (ctx, next) {
-    return passport.authenticate('local', (user) => {
-        if (!user) {
-            ctx.throw(401);
-        }
+export function authUser (ctx, next) {
 
-        const token = user.generateToken();
-        const response = user.toJSON();
-        delete response.password;
+    return passport.authenticate('local', function(err, user, info, status) {
+        if (user === false) {
+            ctx.status = 401;
+            ctx.body = { success: false };
+        } else {
+            let token = user.generateToken();
+            let response = user.toJSON();
 
-        ctx.body = {
-            token,
-            user: response
+            ctx.body = {
+                token,
+                user: response
+            };
         }
     })(ctx, next);
 }

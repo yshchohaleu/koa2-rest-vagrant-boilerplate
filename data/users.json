@@ -8,7 +8,7 @@
     "email": "moorevinson@conferia.com",
     "phone": "+1 (902) 511-2314",
     "address": "433 Sullivan Street, Twilight, Maine, 4931",
-    "password": "asd123!"
+    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
   },
   {
     "_id": ObjectId("56bc57c47bb0e8884071eb00"),
@@ -19,7 +19,7 @@
     "email": "nobledowns@conferia.com",
     "phone": "+1 (812) 412-3775",
     "address": "357 River Street, Chelsea, District Of Columbia, 5938",
-    "password": "asd123!"
+    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
   },
   {
     "_id": ObjectId("56bc57c4ac1b8eb0752f9e90"),
@@ -30,7 +30,7 @@
     "email": "klinechristian@conferia.com",
     "phone": "+1 (800) 454-2829",
     "address": "368 Love Lane, Jeff, Connecticut, 7603",
-    "password": "asd123!"
+    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
   },
   {
     "_id": ObjectId("56bc57c48cc9e78b4ce61206"),
@@ -41,6 +41,6 @@
     "email": "priceshelton@conferia.com",
     "phone": "+1 (863) 516-2166",
     "address": "587 Classon Avenue, Grapeview, New Jersey, 7382",
-    "password": "asd123!"
+    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
   }
 ]
