@@ -1,9 +1,7 @@
-'use strict';
-
 import mongoose from 'mongoose';
 import validate from 'mongoose-validator';
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt-as-promised';
+import bcrypt from 'bcrypt';
 
 import config from '../config'
 
@@ -48,8 +46,8 @@ userSchema.pre('save', async function preSave(next) {
     }
 
     try {
-        var salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
-        var hash = await bcrypt.hash(this.password, salt);
+        let salt = await bcrypt.genSalt(SALT_WORK_FACTOR);
+        let hash = await bcrypt.hash(this.password, salt);
         this.password = hash;
         next();
     }
@@ -58,13 +56,13 @@ userSchema.pre('save', async function preSave(next) {
     }
 });
 
-userSchema.methods.validatePassword = async function validatePassword (password) {
-    const user = this;
-    return await bcrypt.compare(password, user.password)
+userSchema.methods.validatePassword = function validatePassword (password) {
+    let user = this;
+    return bcrypt.compareSync(password, user.password);
 };
 
 userSchema.methods.generateToken = function generateToken () {
-    const user = this;
+    let user = this;
     return jwt.sign({ id: user._id }, config.token)
 };
 

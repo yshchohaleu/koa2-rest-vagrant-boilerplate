@@ -1,5 +1,3 @@
-'use strict';
-
 import Koa from 'koa';
 
 import convert from 'koa-convert'
@@ -16,6 +14,7 @@ app.keys = config.session;
 
 // deprecated promise fix
 mongoose.Promise = global.Promise;
+mongoose.connect(config.database);
 
 app.use(session());
 middleware(app);
@@ -28,5 +27,9 @@ modules(app);
 
 app.use(convert(serve(__dirname + '/public')));
 app.use(ctx => ctx.status = 404);
+
+app.listen(config.port, () => {
+    console.log(`Server started on ${config.port}`)
+});
 
 export default app;

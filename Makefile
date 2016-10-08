@@ -5,4 +5,4 @@ test:
 		--harmony \
 		--reporter spec \
 		--require should \
-		test/*.js
+		src/test/*.js

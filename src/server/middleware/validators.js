@@ -4,7 +4,7 @@ import { getToken } from '../utils/auth'
 import { verify } from 'jsonwebtoken'
 
 export async function ensureUser (ctx, next) {
-    const token = getToken(ctx);
+    let token = getToken(ctx);
 
     if (!token) {
         ctx.throw(401);

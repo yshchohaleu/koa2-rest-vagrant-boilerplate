@@ -1,7 +1,5 @@
-'use strict';
-
 require('babel-register');
-require('./startup');
+require('./server');
 
 
 

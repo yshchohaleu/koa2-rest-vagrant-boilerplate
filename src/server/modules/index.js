@@ -23,7 +23,7 @@ exports = module.exports = function initModules (app) {
                  let currentRouter = require('koa-router')();
 
                  currentRouter[method.toLowerCase()](`${baseUrl}${route}`,
-                     //...handlers,
+                     ...handlers,
                      async function(ctx) {
                          return await lastHandler(ctx);
                      }

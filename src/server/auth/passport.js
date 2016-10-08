@@ -21,17 +21,20 @@ const deserialize = async (id, done) => {
 
 const AuthLocalUser = async (email, password, done) => {
     let user = await User.findOne({ email: email });
+
     if (!user) {
         return done(null, false)
     }
     try {
-        let isMatch = await user.validatePassword(password);
+        let isMatch = user.validatePassword(password);
         if (!isMatch) {
-            return done(null, false)
+            return done(null, false);
         }
-        done(null, user)
+        else {
+            done(null, user);
+        }
     } catch (err) {
-        done(err)
+        done(err, false);
     }
 };
 

@@ -41,7 +41,6 @@ export async function getById (ctx, next) {
 
 export async function update(ctx) {
     try {
-        console.log(ctx.request.body);
         await usersService.update(ctx.request.body);
     }
     catch (err) {
