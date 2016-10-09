@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "make test",
-    "start": "NODE_ENV=development nodemon --harmony src/index.js -V -L",
+    "start": "NODE_ENV=dev nodemon --harmony src/index.js -V -L",
     "prod": "npm run build && NODE_ENV=production node --harmony src/index.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js --separate-stylesheet -p --progress --profile --colors"
   },
