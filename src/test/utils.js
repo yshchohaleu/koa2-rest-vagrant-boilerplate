@@ -1,14 +1,28 @@
-export function authUser (agent, callback) {
-    agent
-        .post('api/users')
-        .set('Accept', 'application/json')
-        .send({ user: { username: 'test', password: 'pass' } })
-        .end((err, res) => {
-            if (err) { return callback(err) }
+import mongoose from 'mongoose'
+import User from '../server/models/User'
 
-            callback(null, {
-                user: res.body.user,
-                token: res.body.token
-            })
-        })
+export function cleanDb() {
+    for (const collection in mongoose.connection.collections) {
+        if (mongoose.connection.collections.hasOwnProperty(collection)) {
+            mongoose.connection.collections[collection].remove()
+        }
+    }
+}
+
+export function insertUser(callback) {
+    let user = new User({
+        "name": "John Doe",
+        "email": "moorevinson@conferia.com",
+        "address": "433 Sullivan Street, Twilight, Maine, 4931",
+        "password": "secretpassword"
+    });
+
+    user.save(function (err) {
+        if (err) {
+            callback(err);
+        }
+        else {
+            callback();
+        }
+    });
 }

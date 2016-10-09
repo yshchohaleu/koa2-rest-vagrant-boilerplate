@@ -25,7 +25,7 @@ exports = module.exports = function initModules (app) {
                  currentRouter[method.toLowerCase()](`${baseUrl}${route}`,
                      ...handlers,
                      async function(ctx) {
-                         return await lastHandler(ctx);
+                         await lastHandler(ctx);
                      }
                  );
 

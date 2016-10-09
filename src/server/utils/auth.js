@@ -9,7 +9,7 @@ export function getToken (ctx) {
     }
     let scheme = parts[0];
     let token = parts[1];
-    
+
     if (/^Bearer$/i.test(scheme)) {
         return token;
     }

@@ -1,18 +1,28 @@
 import usersService from '../../services/usersService'
 
 export async function create (ctx) {
+    let user = null;
+    let token = null;
     try {
-        await usersService.save(ctx.request.body);
+        user = await usersService.save(ctx.request.body);
+        token = user.generateToken();
     } catch (err) {
         ctx.throw(422, err.message)
     }
-    ctx.body = { status: 'success' };
+    ctx.body = {
+        status: 'success',
+        user: user,
+        token: token
+    };
 }
 
-export async function get (ctx) {
+export async function get (ctx, next) {
     try {
         let users = await usersService.find({});
-        ctx.body = { users }
+        ctx.body = {
+            status: 'success',
+            users
+        };
     }
     catch (err) {
         if (err === 404 || err.name === 'CastError') {
@@ -36,7 +46,7 @@ export async function getById (ctx, next) {
         ctx.throw(500);
     }
 
-    if (next) { return next() }
+    if (next) { next() }
 }
 
 export async function update(ctx) {

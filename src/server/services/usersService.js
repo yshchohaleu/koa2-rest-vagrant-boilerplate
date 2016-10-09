@@ -5,7 +5,8 @@ export default {
         return await User.find(filter);
     },
     save: async function (user) {
-        await new User(user).save();
+        let saved = await new User(user).save();
+        return saved;
     },
     update: async function (user) {
         await User.findByIdAndUpdate(user.id, word);

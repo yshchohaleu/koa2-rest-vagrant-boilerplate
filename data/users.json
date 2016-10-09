@@ -1,46 +1,30 @@
 [
   {
     "_id": ObjectId("56bc57c4a615547381588062"),
-    "index": 0,
-    "isActive": false,
-    "name": "TestName",
-    "surname": "TestSurname",
+    "name": "John Doe",
     "email": "moorevinson@conferia.com",
-    "phone": "+1 (902) 511-2314",
     "address": "433 Sullivan Street, Twilight, Maine, 4931",
-    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
+    "password": "$2a$10$5A8/Osrh.bbxMkcQXhsr4.Yz7maRx.FJFXmvmMcdK2FhtlrEHMDG2"
   },
   {
     "_id": ObjectId("56bc57c47bb0e8884071eb00"),
-    "index": 1,
-    "isActive": false,
-    "name": "Noble",
-    "surname": "Downs",
+    "name": "Noble Downs",
     "email": "nobledowns@conferia.com",
-    "phone": "+1 (812) 412-3775",
     "address": "357 River Street, Chelsea, District Of Columbia, 5938",
-    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
+    "password": "$2a$10$5A8/Osrh.bbxMkcQXhsr4.Yz7maRx.FJFXmvmMcdK2FhtlrEHMDG2"
   },
   {
     "_id": ObjectId("56bc57c4ac1b8eb0752f9e90"),
-    "index": 2,
-    "isActive": true,
-    "name": "Kline",
-    "surname": "Christian",
+    "name": "Kline Christian",
     "email": "klinechristian@conferia.com",
-    "phone": "+1 (800) 454-2829",
     "address": "368 Love Lane, Jeff, Connecticut, 7603",
-    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
+    "password": "$2a$10$5A8/Osrh.bbxMkcQXhsr4.Yz7maRx.FJFXmvmMcdK2FhtlrEHMDG2"
   },
   {
     "_id": ObjectId("56bc57c48cc9e78b4ce61206"),
-    "index": 3,
-    "isActive": true,
-    "name": "Price",
-    "surname": "Shelton",
+    "name": "Price Shelton",
     "email": "priceshelton@conferia.com",
-    "phone": "+1 (863) 516-2166",
     "address": "587 Classon Avenue, Grapeview, New Jersey, 7382",
-    "password": "$2a$10$JMflhZS05QSfMCsI6IJQbOkeB9MTQnaUmpWyRZhqdem9Sx0V2r7Qm"
+    "password": "$2a$10$5A8/Osrh.bbxMkcQXhsr4.Yz7maRx.FJFXmvmMcdK2FhtlrEHMDG2"
   }
 ]

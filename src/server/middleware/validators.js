@@ -1,9 +1,9 @@
 import User from '../models/User'
 import config from '../config'
-import { getToken } from '../utils/auth'
-import { verify } from 'jsonwebtoken'
+import {getToken} from '../utils/auth'
+import {verify} from 'jsonwebtoken'
 
-export async function ensureUser (ctx, next) {
+export async function ensureUser(ctx, next) {
     let token = getToken(ctx);
 
     if (!token) {
@@ -12,7 +12,7 @@ export async function ensureUser (ctx, next) {
 
     let decoded = null;
     try {
-        decoded = verify(token, config.token)
+        decoded = verify(token, config.token);
     } catch (err) {
         ctx.throw(401);
     }
@@ -22,5 +22,5 @@ export async function ensureUser (ctx, next) {
         ctx.throw(401);
     }
 
-    return next()
+    next();
 }
