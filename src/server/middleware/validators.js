@@ -22,5 +22,5 @@ export async function ensureUser(ctx, next) {
         ctx.throw(401);
     }
 
-    next();
+    return await next();
 }

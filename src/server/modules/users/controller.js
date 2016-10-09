@@ -10,9 +10,9 @@ export async function create (ctx) {
         ctx.throw(422, err.message)
     }
     ctx.body = {
-        status: 'success',
         user: user,
-        token: token
+        token: token,
+        status: 'success'
     };
 }
 
@@ -20,11 +20,11 @@ export async function get (ctx, next) {
     try {
         let users = await usersService.find({});
         ctx.body = {
-            status: 'success',
-            users
+            users,
+            status: 'success'
         };
     }
-    catch (err) {
+    catch (err) {   
         if (err === 404 || err.name === 'CastError') {
             ctx.throw(404);
         }
@@ -38,7 +38,10 @@ export async function getById (ctx, next) {
         if (!user) {
             ctx.throw(404);
         }
-        ctx.body = { user };
+        ctx.body = {
+            user,
+            status: 'success'
+        };
     } catch (err) {
         if (err === 404 || err.name === 'CastError') {
             ctx.throw(404);
@@ -46,15 +49,23 @@ export async function getById (ctx, next) {
         ctx.throw(500);
     }
 
-    if (next) { next() }
+    if (next) { return await next(); }
 }
 
 export async function update(ctx) {
     try {
-        await usersService.update(ctx.request.body);
+        let id = ctx.params.id;
+        let user = await usersService.update(id, ctx.request.body.user);
+        ctx.body = {
+            user,
+            status: 'success'
+        };
     }
     catch (err) {
-        // todo: error handling
+        if (err === 404 || err.name === 'CastError') {
+            ctx.throw(404);
+        }
+        ctx.throw(500);
     }
 }
 
@@ -62,8 +73,12 @@ export async function update(ctx) {
 export async function remove (ctx) {
     try {
         await usersService.delete(ctx.params.id);
+        ctx.body = { status: 'success' }
     }
     catch (err) {
-        // todo: error handling
+        if (err === 404 || err.name === 'CastError') {
+            ctx.throw(404);
+        }
+        ctx.throw(500);
     }
 }
