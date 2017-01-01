@@ -18,7 +18,7 @@ export async function create (ctx) {
 
 export async function get (ctx, next) {
     try {
-        let users = await usersService.find({});
+        const users = await usersService.find({});
         ctx.body = {
             users,
             status: 'success'
@@ -34,7 +34,7 @@ export async function get (ctx, next) {
 
 export async function getById (ctx, next) {
     try {
-        let user = await usersService.findById(ctx.params.id);
+        const user = await usersService.findById(ctx.params.id);
         if (!user) {
             ctx.throw(404);
         }
@@ -54,8 +54,8 @@ export async function getById (ctx, next) {
 
 export async function update(ctx) {
     try {
-        let id = ctx.params.id;
-        let user = await usersService.update(id, ctx.request.body.user);
+        const id = ctx.params.id;
+        const user = await usersService.update(id, ctx.request.body.user);
         ctx.body = {
             user,
             status: 'success'

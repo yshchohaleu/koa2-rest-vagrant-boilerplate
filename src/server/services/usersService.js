@@ -8,15 +8,15 @@ export default {
         return await User.findById(id);
     },
     save: async function (user) {
-        let saved = await new User(user).save();
+        const saved = await new User(user).save();
         return saved;
     },
     update: async function (id, user) {
-        let updated = await User.findByIdAndUpdate(id, user, {new: true});
+        const updated = await User.findByIdAndUpdate(id, user, {new: true});
         return updated;
     },
     delete: async function (id) {
-        let deleted = await User.findByIdAndRemove(id);
+        const deleted = await User.findByIdAndRemove(id);
     }
 }
 

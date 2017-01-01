@@ -10,7 +10,7 @@ export function cleanDb() {
 }
 
 export function insertUser(callback) {
-    let user = new User({
+    const user = new User({
         "name": "John Doe",
         "email": "moorevinson@conferia.com",
         "address": "433 Sullivan Street, Twilight, Maine, 4931",

@@ -57,12 +57,12 @@ userSchema.pre('save', function preSave(next) {
 });
 
 userSchema.methods.validatePassword = function validatePassword (password) {
-    let user = this;
+    const user = this;
     return bcrypt.compareSync(password, user.password);
 };
 
 userSchema.methods.generateToken = function generateToken () {
-    let user = this;
+    const user = this;
     return jwt.sign({ id: user._id }, config.token)
 };
 

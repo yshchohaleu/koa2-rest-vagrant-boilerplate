@@ -2,7 +2,7 @@ import glob from 'glob'
 import Router from 'koa-router'
 
 exports = module.exports = function initModules (app) {
-    let instance = new Router({ prefix: '/api' });
+    const instance = new Router({ prefix: '/api' });
 
     glob(`${__dirname}/*`, { ignore: '**/index.js' }, (err, matches) => {
         if (err) { throw err }
@@ -20,7 +20,7 @@ exports = module.exports = function initModules (app) {
                  } = config;
 
                  const lastHandler = handlers.pop();
-                 let currentRouter = require('koa-router')();
+                 const currentRouter = require('koa-router')();
 
                  currentRouter[method.toLowerCase()](`${baseUrl}${route}`,
                      ...handlers,

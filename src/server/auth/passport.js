@@ -10,7 +10,7 @@ const serialize = (user, done) => {
 
 const deserialize = async (id, done) => {
     try {
-        let user = await User.findById(id);
+        const user = await User.findById(id);
         done(null, user);
     }
     catch (err) {
@@ -20,7 +20,7 @@ const deserialize = async (id, done) => {
 };
 
 const AuthLocalUser = async (email, password, done) => {
-    let user = await User.findOne({ email: email });
+    const user = await User.findOne({ email: email });
     if (!user) {
         done(null, false);
         return;

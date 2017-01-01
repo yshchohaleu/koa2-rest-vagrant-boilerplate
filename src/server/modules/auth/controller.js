@@ -6,8 +6,8 @@ export function authUser (ctx, next) {
             ctx.status = 401;
             ctx.body = { success: false };
         } else {
-            let token = user.generateToken();
-            let response = user.toJSON();
+            const token = user.generateToken();
+            const response = user.toJSON();
 
             ctx.body = {
                 token,
